@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Iniciar Sesión</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilosW3Schools.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontsGoogleaApis.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/css1.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <script src="{{ url_for('static', filename='https://kit.fontawesome.com/bec3cdf477.js') }}" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-image: url("../static/images/hotel.jpg");
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body class="w3-light-grey">
+
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <h1><i class="far fa-building"></i>&nbsp;Jumeirah Emirates Towers Hotel</h1>
+            </a>
+            <form class="d-flex" method="POST">
+                <a class="btn btn-primary" href="/" role="button">Regresar al Inicio</a> &nbsp;&nbsp;&nbsp;
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <br>
+    <!-- Iniciar sesión -->
+<br><br><br><br>
+    <div class="w3-center" id="iniciarSesion">
+        <h2>Iniciar Sesión</h2>
+        <p>Escribe tu usuario y contraseña para iniciar sesión.</p>
+
+        <form style="width: 350px; padding: 16px; border-radius: 10px; margin:auto; background-color: rgb(125, 189, 241);" action="/iniciarSesion/" method="POST">
+            {{ csrf_tokem }}
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="text" placeholder="Usuario" required name="usuario" id="usuario"></p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="password" placeholder="Contraseña" required name="contrasena" id="contrasena"></p>
+            <br>
+
+            <p><button class="w3-button w3-black w3-padding-large" type="submit">SIGN IN</button></p>
+            <a href="/recuperarContrasena/">Olvide mi usuario o contraseña</a>
+
+        </form>
+        <br>
+        <form style="width: 350px; padding: 16px; border-radius: 10px; margin:auto; background-color: rgb(125, 189, 241);" action="/registro/">
+            <p>No tengo cuenta, Me quiero Registrar</p>
+            <p><button class="w3-button w3-black w3-padding-large" type="submit">SIGN UP</button></p>
+        </form>
+        <br><br><br><br><br><br><br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <hr>
+    <footer>
+        <div class="nombreyc" style="padding: 20px;">
+            <h4>Jumeirah Emirates Towers Hotel &#169;<br>
+                <form>
+                    <p class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5">
+                        <label for="radio1">★</label>
+                        <input id="radio2" type="radio" name="estrellas" value="4">
+                        <label for="radio2">★</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+                        <label for="radio3">★</label>
+                        <input id="radio4" type="radio" name="estrellas" value="2">
+                        <label for="radio4">★</label>
+                        <input id="radio5" type="radio" name="estrellas" value="1">
+                        <label for="radio5">★</label>
+                    </p>
+                </form>
+            </h4>
+        </div>
+        <div class="texto" style="padding: 20px;">
+            <p>Horario de atención: <br>Lunes a Viernes de 6:00 am a 10:00 pm<br> Sábados y Domingos: de 6:00 am a 12:00 pm </p>
+        </div>
+        <div class="redes" style="padding: 20px;">
+            <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a><br>
+            <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a><br>
+            <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a><br>
+            <a href="#"><i class="fas fa-envelope-square"></i> Correo Electrónico</a>
+        </div>
+        <div class="fin" style="padding: 20px;">
+            <p>Made with ❤<br>Colombia<br>2021</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

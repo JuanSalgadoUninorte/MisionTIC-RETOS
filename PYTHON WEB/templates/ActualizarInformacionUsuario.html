@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilosW3Schools.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontsGoogleaApis.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/css1.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <script src="{{ url_for('static', filename='https://kit.fontawesome.com/bec3cdf477.js') }}" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/menuLateral.js') }}"></script>
+
+    <title>Actualizar información usuario</title>
+
+    <!--CSS-->
+    <style>
+
+        body {
+            background-image: url("https://content.r9cdn.net/himg/e5/c8/39/leonardo-87541052-Pool_(6)_O-031674.jpg");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+ <!--NavBar-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <h1><i class="far fa-building"></i>&nbsp;Jumeirah Emirates Towers Hotel</h1>
+        </a>
+        <form class="d-flex" method="POST">
+            <a class="btn btn-primary" href="/" role="button">Regresar al Inicio</a> &nbsp;&nbsp;&nbsp;
+            <a href="/cerrarSesion/" class="w3-bar-item w3-button w3-light-blue w3-mobile"><i class="fas fa-sign-out-alt w3-margin-right"></i>Cerrar Sesión</a>
+        </form>
+    </div>
+    </div>
+</nav>
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-large">
+    <a href="#" class="fas fa-user w3-bar-item w3-button w3-right w3-white w3-mobile"> Usuario {{ Nombre }}</a>
+
+    <div style="height: auto; " id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/irAreserva/">Gestionar Reservas</a>
+        <a href="/calificanos/">Gestionar Calificaciones</a>
+        <a href="/formularioUpdate/">Actualizar mi Información</a>
+    </div>
+
+    <button style="padding: 1.7mm;" class="openbtn" onclick="openNav()">&#9776; Configuraciones</button>
+
+</div>
+<br><br>
+    <div class="w3-center" id="iniciarSesion">
+        <h2>Editar Información</h2>
+        <p>Llena el siguiente formulario para actualizar tus datos:</p>
+
+        <form style="width: 350px; padding: 16px; border-radius: 10px; margin:auto; background-color: rgb(125, 189, 241);" action="/interfazUsuario/ActualizarInfo/" method="POST">
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="text" placeholder="Documento de Identidad" required name="id" id="id"></p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="text" placeholder="Nombres" required name="nombres" id="nombres"></p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="text" placeholder="Apellidos" required name="apellidos" id="apellidos"></p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="integer" placeholder="Teléfono" required name="telefono" id="telefono"></p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="text" placeholder="Dirección" required name="direccion" id="direccion"></p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="email" placeholder="Correo Electrónico" required name="email" id="email"></p>
+            <p>Fecha de nacimiento:</p>
+            <p><input class="w3-input w3-padding-12 w3-center w3-card" type="date" placeholder="Fecha de Nacimiento" required name="nacimiento" id="nacimiento"></p>
+            <br>
+
+            <p><button class="w3-button w3-black w3-padding-large" type="submit">ACTUALIZAR</button></p>
+            
+        </form>
+        <br>
+        
+
+
+    
+    
+    
+    <hr>
+    <footer class="footerP">
+        <div class="nombreyc" style="padding: 20px;">
+            <h4>Jumeirah Emirates Towers Hotel &#169;<br>
+                <form>
+                    <p class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5">
+                        <label for="radio1">★</label>
+                        <input id="radio2" type="radio" name="estrellas" value="4">
+                        <label for="radio2">★</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+                        <label for="radio3">★</label>
+                        <input id="radio4" type="radio" name="estrellas" value="2">
+                        <label for="radio4">★</label>
+                        <input id="radio5" type="radio" name="estrellas" value="1">
+                        <label for="radio5">★</label>
+                    </p>
+                </form>
+            </h4>
+        </div>
+        <div class="texto" style="padding: 20px;">
+            <p>Horario de atención: <br>Lunes a Viernes de 6:00 am a 10:00 pm<br>
+                Sábados y Domingos: de 6:00 am a 12:00 pm </p>
+        </div>
+        <div class="redes" style="padding: 20px;">
+            <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a><br>
+            <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a><br>
+            <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a><br>
+            <a href="#"><i class="fas fa-envelope-square"></i> Correo Electrónico</a>
+        </div>
+        <div class="fin" style="padding: 20px;">
+            <p>Made with ❤<br>Colombia<br>2021</p>
+        </div>
+    </footer>
+</body>
+
+</html>

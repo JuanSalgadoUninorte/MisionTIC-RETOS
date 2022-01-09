@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificanos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/css1.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        .divisionComentario {
+            width: 600px;
+            height: 600px;
+        }
+
+        input {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"
+        style="background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <h1><i class="far fa-building"></i>&nbsp;Jumeirah Emirates Towers Hotel</h1>
+            </a>
+            <form class="d-flex" method="POST">
+                <a class="btn btn-primary" href="/cerrarSesion/" role="button">Cerrar Sesión</a> &nbsp;&nbsp;&nbsp;
+                <a class="btn btn-primary" href="/" role="button">Regresar al Inicio</a> &nbsp;&nbsp;&nbsp;
+            </form>
+        </div>
+        </div>
+    </nav>
+    <br>
+    <h2 Style="text-align: center;">Califica nuestras habitaciones</h2>
+    <img src="https://www.sonestacartagena.com/cache/cd/04/cd04fd1ebfda5af8905e5a3b9cda46b1.jpg"
+        class="rounded mx-auto d-block" alt="">
+    <br>
+    <div style="display: flex;
+justify-content: center;
+align-items: center;">
+        <div class="divisionComentario">
+            <form action="/CrearComentario/" method="POST">
+                <input type="text" id="IdHabitacion" name="IdHabitacion" class="form-control" placeholder="Id de la Habitación">
+                <br>
+                <input type="text" id="IdUsuario" name="IdUsuario" class="form-control" value="{{ usuario2 }}" readonly>
+                <br>
+                <input type="date" name="fechaFinal" class="form-control" id="fechaFinal"
+                    placeholder="Seleccione la fecha en la que terminó su estancia">
+                <br>
+                <select class="form-select" aria-label="Default select example" name="Calificacion" id="Calificacion">
+                    <option selected>Seleccione la calificación</option>
+                    <option value="Deplorable">Deplorable</option>
+                    <option value="Insuficiente">Insuficiente</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Bueno">Bueno</option>
+                    <option value="Muy Bueno">Muy Bueno</option>
+                    <option value="Excelente">Excelente</option>
+                </select>
+                <br>
+                <div class="form-floating">
+                    <!--<input type="text" name="" id="" class="form-control" style="height: 100px">-->
+                    <textarea class="form-control" placeholder="Leave a comment here" id="Comentario" name="Comentario"
+                        style="height: 100px" aria-placeholder="Escribe aquí tu comentario"></textarea>
+                        <label for="Comentario">Comentario</label>
+                </div>
+                <br>
+                <div class="col-12">
+                    <center><button type="submit" class="btn btn-primary">Guardar</button></center>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <hr>
+    <footer>
+        <div class="nombreyc" style="padding: 20px;">
+            <h4>Jumeirah Emirates Towers Hotel &#169;<br>
+                <form>
+                    <p class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5">
+                        <label for="radio1">★</label>
+                        <input id="radio2" type="radio" name="estrellas" value="4">
+                        <label for="radio2">★</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+                        <label for="radio3">★</label>
+                        <input id="radio4" type="radio" name="estrellas" value="2">
+                        <label for="radio4">★</label>
+                        <input id="radio5" type="radio" name="estrellas" value="1">
+                        <label for="radio5">★</label>
+                    </p>
+                </form>
+            </h4>
+        </div>
+        <div class="texto" style="padding: 20px;">
+            <p>Horario de atención: <br>Lunes a Viernes de 6:00 am a 10:00 pm<br> Sábados y Domingos: de 6:00 am a 12:00
+                pm </p>
+        </div>
+        <div class="redes" style="padding: 20px;">
+            <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a><br>
+            <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a><br>
+            <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a><br>
+            <a href="#"><i class="fas fa-envelope-square"></i> Correo Electrónico</a>
+        </div>
+        <div class="fin" style="padding: 20px;">
+            <p>Made with ❤<br>Colombia<br>2021</p>
+        </div>
+    </footer>
+</body>
+
+</html>
